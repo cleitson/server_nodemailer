@@ -26,10 +26,10 @@ const sendMail = async (name, mail, message) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    return { status: "SUCCESS", data: "Email enviado com sucesso!" };
+    return { status: "SUCCESS", data: { message:"Email enviado com sucesso!" } };
   } catch (error) {
     console.error(error);
-    return { status: "BAD_REQUEST", data: "Erro ao enviar email!" };
+    return { status: "BAD_REQUEST", data: { message: "Erro ao enviar email!" } };
   }
 };
 
